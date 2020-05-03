@@ -1,5 +1,6 @@
 import 'package:flash_chat/todoey/screens/tasks_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'login_screen.dart';
 import 'registration_screen.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -48,18 +49,25 @@ class _WelcomeScreenState extends State<WelcomeScreen>
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Hero(
-                  tag: 'logo',
+                  tag: FontAwesomeIcons.sun,
                   child: Container(
-                    child: Image.asset('images/logo.png'),
+                    child: Icon(
+                      FontAwesomeIcons.sun,
+                      size: 40.0,
+                    ),
                     height: 60.0,
                   ),
                 ),
+                SizedBox(
+                  width: 10.0,
+                ),
                 TypewriterAnimatedTextKit(
-                  text: ['Flash Chat'],
+                  text: ['Let\'s 朝活'],
                   textStyle: TextStyle(
-                    fontSize: 45.0,
+                    fontSize: 35.0,
                     fontWeight: FontWeight.w900,
                   ),
                 ),
@@ -70,23 +78,16 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             ),
             RoundedButton(
               title: 'Log In',
-              color: Colors.lightBlueAccent,
+              color: Colors.orangeAccent,
               onPressed: () {
                 Navigator.pushNamed(context, LoginScreen.id);
               },
             ),
             RoundedButton(
               title: 'Register',
-              color: Colors.blueAccent,
+              color: Colors.deepOrangeAccent,
               onPressed: () {
                 Navigator.pushNamed(context, RegistrationScreen.id);
-              },
-            ),
-            RoundedButton(
-              title: 'To doへ',
-              color: Colors.redAccent,
-              onPressed: () {
-                Navigator.pushNamed(context, TasksScreen.id);
               },
             ),
           ],

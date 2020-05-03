@@ -4,6 +4,7 @@ import 'add_task_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:flash_chat/todoey/models/task_data.dart';
 import 'package:flash_chat/todoey/models/task.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class TasksScreen extends StatefulWidget {
   static const String id = 'tasks_screen';
@@ -14,17 +15,16 @@ class TasksScreen extends StatefulWidget {
 
 class _TasksScreenState extends State<TasksScreen> {
   List<Task> tasks = [
-    Task(name: 'Buy milk'),
-    Task(name: 'Buy eggs'),
-    Task(name: 'Buy bread'),
+    Task(name: '今日やるタスク10個出す'),
+    Task(name: '優先順位を決める'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
+      backgroundColor: Colors.orangeAccent,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: Colors.orangeAccent,
         child: Icon(Icons.add),
         onPressed: () {
           showModalBottomSheet(
@@ -41,7 +41,7 @@ class _TasksScreenState extends State<TasksScreen> {
         },
       ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
             padding: EdgeInsets.only(
@@ -49,10 +49,12 @@ class _TasksScreenState extends State<TasksScreen> {
             child: Column(
               children: <Widget>[
                 CircleAvatar(
-                  child: Icon(
-                    Icons.list,
-                    size: 30.0,
-                    color: Colors.lightBlueAccent,
+                  child: IconTheme(
+                    data: IconThemeData(color: Colors.orangeAccent),
+                    child: Icon(
+                      FontAwesomeIcons.tasks,
+                      size: 30.0,
+                    ),
                   ),
                   backgroundColor: Colors.white,
                   radius: 30.0,
@@ -61,10 +63,10 @@ class _TasksScreenState extends State<TasksScreen> {
                   height: 10.0,
                 ),
                 Text(
-                  'Todoey',
+                  'Todoを決めよう',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 50.0,
+                      fontSize: 40.0,
                       fontWeight: FontWeight.w700),
                 ),
                 Text(

@@ -49,15 +49,9 @@ class _ChatScreenState extends State<ChatScreen> {
               Navigator.pop(context);
             },
           ),
-          IconButton(
-            icon: Icon(Icons.content_paste),
-            onPressed: () {
-              Navigator.pushNamed(context, TasksScreen.id);
-            },
-          )
         ],
-        title: Text('⚡️Chat'),
-        backgroundColor: Colors.lightBlueAccent,
+        title: Text('⚡️朝活仲間募集'),
+        backgroundColor: Colors.orangeAccent,
       ),
       body: SafeArea(
         child: Column(
@@ -181,7 +175,7 @@ class MessageBubble extends StatelessWidget {
                     topRight: Radius.circular(30.0),
                   ),
             elevation: 5.0,
-            color: isMe ? Colors.lightBlueAccent : Colors.white,
+            color: isMe ? Colors.orange : Colors.white,
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               child: Text(

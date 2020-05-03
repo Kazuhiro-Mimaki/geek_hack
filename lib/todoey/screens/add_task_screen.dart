@@ -30,7 +30,7 @@ class AddTaskScreen extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 30.0,
-                color: Colors.lightBlueAccent,
+                color: Colors.orangeAccent,
               ),
             ),
             TextField(
@@ -47,7 +47,7 @@ class AddTaskScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              color: Colors.lightBlueAccent,
+              color: Colors.orangeAccent,
               onPressed: () {
                 addTaskCallback(newTaskTitle);
               },
